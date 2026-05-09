@@ -3,13 +3,19 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
 <title>For My Brother ❤️</title>
 
 <style>
+
 *{
   margin:0;
   padding:0;
   box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
 }
 
 body{
@@ -17,7 +23,38 @@ body{
   background:linear-gradient(180deg,#0f172a,#1e293b,#111827);
   color:white;
   overflow-x:hidden;
+  position:relative;
 }
+
+/* FLOATING STARS */
+
+.stars{
+  position:fixed;
+  width:100%;
+  height:100%;
+  top:0;
+  left:0;
+  background-image:
+  radial-gradient(white 1px, transparent 1px);
+  background-size:40px 40px;
+  opacity:0.08;
+  z-index:-1;
+}
+
+/* PROGRESS BAR */
+
+#progressBar{
+  position:fixed;
+  top:0;
+  left:0;
+  width:0%;
+  height:5px;
+  background:#38bdf8;
+  z-index:999;
+  box-shadow:0 0 15px #38bdf8;
+}
+
+/* SECTION */
 
 section{
   min-height:100vh;
@@ -28,16 +65,41 @@ section{
   text-align:center;
   padding:40px 20px;
   border-bottom:1px solid rgba(255,255,255,0.08);
+
+  animation:fadeUp 1s ease;
 }
 
+/* ANIMATION */
+
+@keyframes fadeUp{
+
+  from{
+    opacity:0;
+    transform:translateY(40px);
+  }
+
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
+/* HEADINGS */
+
 h1{
-  font-size:48px;
+  font-size:50px;
   margin-bottom:20px;
 }
 
 h2{
-  font-size:38px;
+  font-size:40px;
   margin-bottom:20px;
+}
+
+h3{
+  margin-top:25px;
+  font-size:28px;
+  color:#7dd3fc;
 }
 
 p{
@@ -46,15 +108,28 @@ p{
   max-width:800px;
 }
 
+/* CARD */
+
 .card{
   background:rgba(255,255,255,0.08);
+
   padding:30px;
+
   border-radius:25px;
-  backdrop-filter:blur(10px);
-  box-shadow:0 0 25px rgba(0,0,0,0.4);
+
+  backdrop-filter:blur(12px);
+
+  border:1px solid rgba(255,255,255,0.12);
+
+  box-shadow:
+  0 0 30px rgba(56,189,248,0.15),
+  0 0 60px rgba(0,0,0,0.35);
+
   width:90%;
   max-width:850px;
 }
+
+/* BUTTON */
 
 .btn{
   margin-top:25px;
@@ -73,6 +148,18 @@ p{
   background:#0ea5e9;
 }
 
+/* MUSIC BUTTON */
+
+.music-btn{
+  background:#22c55e;
+}
+
+.music-btn:hover{
+  background:#16a34a;
+}
+
+/* IMAGES */
+
 img{
   width:260px;
   height:260px;
@@ -81,7 +168,15 @@ img{
   margin-top:20px;
   border:4px solid rgba(255,255,255,0.2);
   box-shadow:0 0 25px rgba(255,255,255,0.2);
+
+  transition:0.4s;
 }
+
+img:hover{
+  transform:scale(1.06);
+}
+
+/* GALLERY */
 
 .gallery{
   display:flex;
@@ -96,11 +191,15 @@ img{
   height:180px;
 }
 
+/* QUOTE */
+
 .quote{
   font-size:28px;
   font-style:italic;
   color:#93c5fd;
 }
+
+/* FOOTER */
 
 footer{
   padding:25px;
@@ -109,21 +208,16 @@ footer{
   font-size:18px;
 }
 
-.music-btn{
-  background:#22c55e;
-}
-
-.music-btn:hover{
-  background:#16a34a;
-}
+/* MOBILE */
 
 @media(max-width:768px){
+
   h1{
-    font-size:36px;
+    font-size:38px;
   }
 
   h2{
-    font-size:30px;
+    font-size:32px;
   }
 
   p{
@@ -134,128 +228,215 @@ footer{
     width:220px;
     height:220px;
   }
+
+  .gallery img{
+    width:150px;
+    height:150px;
+  }
 }
+
 </style>
 </head>
+
 <body>
 
+<!-- STARS -->
+<div class="stars"></div>
+
+<!-- PROGRESS BAR -->
+<div id="progressBar"></div>
+
 <!-- SECTION 1 -->
+
 <section>
+
   <div class="card">
+
     <h1>To My Long Distance Brother 💙</h1>
-    <p>
-      Distance can separate places, but never hearts.
-      This little website is made specially for you.
-    </p>
-    <button class="btn" onclick="nextSection(1)">Start Journey 🚀</button>
+
+    <p id="typing"></p>
+
+    <button class="btn" onclick="nextSection(1)">
+      Start Journey 🚀
+    </button>
+
   </div>
+
 </section>
 
 <!-- SECTION 2 -->
+
 <section>
+
   <div class="card">
+
     <h2>How We Met 🤝</h2>
+
     <p>
       Even though miles are between us,
       our friendship became stronger every single day.
       Some bonds are stronger than blood.
     </p>
+
     <img src="bro1.jpg" alt="Brother Photo">
+
   </div>
+
 </section>
 
 <!-- SECTION 3 -->
+
 <section>
+
   <div class="card">
+
     <h2>Best Memories 📸</h2>
 
     <div class="gallery">
+
       <img src="mem1.jpg">
+
       <img src="mem2.jpg">
+
       <img src="mem3.jpg">
+
     </div>
+
   </div>
+
 </section>
 
 <!-- SECTION 4 -->
+
 <section>
+
   <div class="card">
+
     <h2>Things I Appreciate 🌟</h2>
+
     <p>
-      ✔ Always supporting me<br><br>
-      ✔ Listening when I needed someone<br><br>
-      ✔ Making me laugh even on bad days<br><br>
+
+      ✔ Always supporting me
+      <br><br>
+
+      ✔ Listening when I needed someone
+      <br><br>
+
+      ✔ Making me laugh even on bad days
+      <br><br>
+
       ✔ Being a real brother from far away
+
     </p>
+
   </div>
+
 </section>
 
 <!-- SECTION 5 -->
+
 <section>
+
   <div class="card">
+
     <h2>Our Crazy Conversations 😂</h2>
+
     <p>
       From random late-night talks
       to sending memes nonstop,
       every chat with you becomes a memory.
     </p>
+
   </div>
+
 </section>
 
 <!-- SECTION 6 -->
+
 <section>
+
   <div class="card">
+
     <h2>Brother Quote 💬</h2>
+
     <p class="quote">
+
       “A brother may be far away,
       but the connection never fades.”
+
     </p>
+
   </div>
+
 </section>
 
 <!-- SECTION 7 -->
+
 <section>
+
   <div class="card">
+
     <h2>Thank You ❤️</h2>
+
     <p>
       Thank you for being part of my life.
       Thank you for understanding me.
       Thank you for staying.
     </p>
+
   </div>
+
 </section>
 
 <!-- SECTION 8 -->
+
 <section>
+
   <div class="card">
+
     <h2>Voice or Song 🎵</h2>
+
     <p>You can add your favorite song here.</p>
 
-    <audio id="song" src="song.mp3"></audio>
+    <audio id="song" src="song.mp3" loop></audio>
 
     <button class="btn music-btn" onclick="playSong()">
       Play Song ▶
     </button>
+
   </div>
+
 </section>
 
 <!-- SECTION 9 -->
+
 <section>
+
   <div class="card">
+
     <h2>Future Plans ✈️</h2>
+
     <p>
       One day we’ll finally meet,
       click photos together,
       laugh nonstop,
       and make even better memories.
     </p>
+
+    <h3 id="countdown"></h3>
+
   </div>
+
 </section>
 
 <!-- SECTION 10 -->
+
 <section>
+
   <div class="card">
+
     <h2>Final Message 💙</h2>
+
     <p>
       No matter how far you are,
       you’ll always be my brother.
@@ -266,30 +447,121 @@ footer{
       Tap Here 🎁
     </button>
 
-    <p id="hiddenMessage" style="margin-top:20px; display:none; color:#7dd3fc;">
+    <p
+      id="hiddenMessage"
+      style="
+      margin-top:20px;
+      display:none;
+      color:#7dd3fc;
+      font-size:24px;
+      "
+    >
       Love you bro 💙
     </p>
+
   </div>
+
 </section>
+
+<!-- FOOTER -->
 
 <footer>
   Made with 💙 for my brother
 </footer>
 
 <script>
+
+/* TYPING EFFECT */
+
+const text =
+"Distance can separate places, but never hearts. This little website is made specially for you.";
+
+let i = 0;
+
+function typingEffect(){
+
+  if(i < text.length){
+
+    document.getElementById("typing").innerHTML += text.charAt(i);
+
+    i++;
+
+    setTimeout(typingEffect,40);
+  }
+}
+
+typingEffect();
+
+/* PLAY SONG */
+
 function playSong(){
+
   document.getElementById("song").play();
 }
 
+/* HIDDEN MESSAGE */
+
 function showMessage(){
-  document.getElementById("hiddenMessage").style.display="block";
+
+  let msg =
+  document.getElementById("hiddenMessage");
+
+  msg.style.display = "block";
+
+  msg.style.animation = "fadeUp 1s ease";
 }
 
+/* NEXT SECTION */
+
 function nextSection(num){
-  document.querySelectorAll("section")[num].scrollIntoView({
+
+  document.querySelectorAll("section")[num]
+  .scrollIntoView({
     behavior:"smooth"
   });
 }
+
+/* PROGRESS BAR */
+
+window.onscroll = function(){
+
+  let winScroll =
+  document.body.scrollTop ||
+  document.documentElement.scrollTop;
+
+  let height =
+  document.documentElement.scrollHeight -
+  document.documentElement.clientHeight;
+
+  let scrolled =
+  (winScroll / height) * 100;
+
+  document.getElementById("progressBar")
+  .style.width = scrolled + "%";
+};
+
+/* COUNTDOWN */
+
+let future =
+new Date("Dec 31, 2026 00:00:00").getTime();
+
+setInterval(function(){
+
+  let now =
+  new Date().getTime();
+
+  let distance =
+  future - now;
+
+  let days =
+  Math.floor(distance / (1000 * 60 * 60 * 24));
+
+  document.getElementById("countdown")
+  .innerHTML =
+  days + " days until we meet 🤝";
+
+},1000);
+
 </script>
 
 </body>
