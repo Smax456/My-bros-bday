@@ -1,0 +1,405 @@
+<!DOCTYPE html>  <html lang="en">    <head>    
+<meta charset="UTF-8">    
+<title>For Jyoshna ❤️</title>    
+<meta name="viewport" content="width=device-width, initial-scale=1.0">  <style>    
+*{margin:0;padding:0;box-sizing:border-box}    
+body{    
+  font-family:'Segoe UI',sans-serif;    
+  background:linear-gradient(180deg,#ff9a9e,#fad0c4);    
+  color:white;    
+  overflow-x:hidden;    
+}    /* COMMON */
+
+.container{
+position: relative;
+width: 280px;
+height: 120px;
+margin: 20px auto;
+
+display: flex;
+justify-content: center;
+align-items: center;
+gap: 20px;
+
+overflow: hidden;
+}
+
+  #yesBtn, #noBtn {
+  position: absolute;
+  padding: 12px 24px;
+  border-radius: 25px;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+/* YES button fixed position */
+#yesBtn {
+  left: 35%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* NO button starting position */
+#noBtn {
+  left: 65%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.section{
+min-height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+padding:25px;
+}
+.hide{display:none}
+
+.frame{
+max-width:900px;
+width:100%;
+text-align:center;
+padding:36px 26px;
+border-radius:30px;
+background:rgba(255,255,255,.15);
+backdrop-filter:blur(10px);
+border:2px solid rgba(255,255,255,.3);
+box-shadow:0 0 60px rgba(255,255,255,.35);
+animation:breath 4s infinite;
+}
+
+@keyframes breath{
+0%,100%{box-shadow:0 0 40px rgba(255,255,255,.3)}
+50%{box-shadow:0 0 70px rgba(255,255,255,.45)}
+}
+
+button{
+margin-top:24px;
+padding:14px 36px;
+border:none;
+border-radius:30px;
+font-size:18px;
+font-weight:bold;
+background:white;
+color:#ff4d6d;
+cursor:pointer;
+}
+button:active{transform:scale(.96)}
+
+/* HEART LOCK */
+.heart{
+font-size:90px;
+animation:pulse 1.2s infinite;
+cursor:pointer;
+}
+@keyframes pulse{
+0%,100%{transform:scale(1)}
+50%{transform:scale(1.15)}
+}
+.heart-move{
+animation:moveUp 1s forwards;
+}
+@keyframes moveUp{
+to{transform:translateY(-200px);opacity:0}
+}
+.counter{margin-top:10px;font-size:18px}
+
+/* IMAGE */
+.photo{
+width:260px;
+height:260px;
+border-radius:22px;
+object-fit:cover;
+margin-top:16px;
+border:3px solid rgba(255,255,255,.45);
+box-shadow:0 0 45px rgba(255,255,255,.9);
+}
+
+/* LOVE LETTER TYPING */
+.type-text{
+font-size:20px;
+line-height:1.7;
+margin-top:16px;
+white-space:pre-line;
+border-right:2px solid white;
+width:0;
+overflow:hidden;
+animation:typing 4.5s steps(40,end) forwards,
+blink .8s infinite;
+}
+@keyframes typing{to{width:100%}}
+@keyframes blink{50%{border-color:transparent}}
+
+/* SLIDESHOW */
+.slide{display:none}
+.slide img{
+width:100%;
+max-width:320px;
+height:380px;
+object-fit:cover;
+border-radius:22px;
+border:3px solid rgba(255,255,255,.4);
+box-shadow:0 0 40px rgba(255,255,255,.8);
+}
+.caption{
+margin-top:10px;
+font-size:18px;
+background:rgba(255,255,255,.25);
+padding:10px;
+border-radius:14px;
+}
+.slide-controls{margin-top:15px}
+.slide-controls button{
+padding:10px 20px;
+font-size:16px;
+}
+
+/* ROSE */
+.rose{
+font-size:90px;
+animation:roseGlow 2.5s infinite;
+}
+@keyframes roseGlow{
+0%,100%{transform:scale(1);text-shadow:0 0 15px #fff}
+50%{transform:scale(1.2);text-shadow:0 0 35px #fff}
+}
+
+/* ROSE PETALS */
+.petal{
+position:fixed;
+top:-20px;
+animation:petalFall 7s linear infinite;
+}
+@keyframes petalFall{
+to{transform:translateY(120vh) rotate(360deg);opacity:0}
+}
+
+/* FLOAT HEARTS */
+.floating{
+position:fixed;
+bottom:-20px;
+animation:floatUp 7s linear infinite;
+}
+@keyframes floatUp{
+to{transform:translateY(-120vh)}
+}
+</style>  </head>  <body>  <!-- HEART LOCK -->  <div class="section" id="lock">
+
+  <div class="frame">    
+    <div class="heart" id="heart">❤️</div>    
+    <div class="counter" id="count">0 / 4 taps</div>    
+    <p>Tap the heart to unlock</p>    
+  </div>    
+</div>  <!-- TAP TO BEGIN -->  <div id="start" class="section hide">    
+  <div class="frame">    
+    <h1>oyy Jyoshna 💖</h1>    
+    <p>Idi neekosam matrame 😉</p>    
+    <button onclick="next('song')">Tap to Begin 💌</button>    
+  </div>    
+</div>  <!-- SONG -->  <div id="song" class="section hide">    
+  <div class="frame">    
+    <h2>I Wanna Be Yours song feel kosam play cheyyandi🤌🎶</h2> 
+    <p>ear phones Leda headphones kachitham Ga use cheyyali🎧⚠️</p>
+    <button onclick="playSong()">Play Song ▶️</button>    
+    <button onclick="next('letter')">Continue 💗</button>    
+  </div>    
+</div>  <!-- LOVE LETTER -->  <div id="letter" class="section hide">    
+  <div class="frame">    
+    <h2>నా prema లేఖ 💌</h2>    
+    <div class="type-text">      
+from my heart. Ee roju 14-2-2026
+ నా life lo nenu ila oka gift okari kosam chesta ani 
+ adi kuda Valentine’s Day na ani కల లో kuda anukoley ఆ person 
+  నువ్వు, మనం meet ayindi 12-5-2025 నా mid night around 1:30 ki
+   Ninnu meet avvadam నా luck thank you for everything🥰, 
+      And అలానే I'm really sorry about everything😔, 
+      Ee website neeku nachuthundo ledo naaku thelidu but
+      I tried my best to make a beautiful memory for us 
+      It's more than a website for me,
+      and mana bonding chaala rapidly perigindi 
+      Like friends to best friends, best friends to bestie, bestie to partners😌
+      Manam meet ayyi 1 year avvadaniki inka enno months levu🫣
+      I hope our journey will never breaks, 
+      sare next click chey😚
+</div>  
+<button onclick="next('photo')">Next 🤍</button>    </div>    
+</div>  <!-- HER PHOTO -->  <div id="photo" class="section hide">    
+  <div class="frame">    
+    <img src="jyoshna.jpg" class="photo">    
+    <p style="margin-top:16px;font-size:18px">    
+      Your smile feels like peace.    
+    </p>    
+    <button onclick="next('last')">Next 🌙</button>    
+  </div>    
+</div>  <!-- LAST WORDS -->  <div id="last" class="section hide">    
+  <div class="frame">    
+    <h2>Last Words 💫</h2>    
+    <p style="font-size:20px;line-height:1.7">    
+      Whatever happens,<br>    
+      I’ll always respect your feelings.    
+    </p>    
+    <button onclick="next('memory')">Our Memories 📸</button>    
+  </div>    
+</div>  <!-- MEMORY SLIDESHOW -->  <div id="memory" class="section hide">    
+  <div class="frame">    
+    <h2>Our Memory Lane 📸</h2>  <div class="slide"><img src="mem1.jpg"><div class="caption">🌱 When we met</div></div>    
+<div class="slide"><img src="mem2.jpg"><div class="caption">💞 When we fell in love</div></div>    
+<div class="slide"><img src="mem3.png"><div class="caption">📸 Our pic together</div></div>    
+<div class="slide"><img src="mem4.jpg"><div class="caption">💖 My favorite pic of you</div></div>    
+<div class="slide"><img src="mem5.webp"><div class="caption">🫶 Our first matching PFP</div></div>    <div class="slide-controls">    
+  <button onclick="manualSlide(-1)">⬅️ Prev</button>    
+  <button onclick="manualSlide(1)">Next ➡️</button>    
+</div>    <button onclick="next('rose')">Continue 🌹</button>
+
+  </div>    
+</div>  <!-- ROSE -->  <div id="rose" class="section hide">    
+  <div class="frame">    
+    <div class="rose">🌹</div>    
+    <p>idigo ఒక roja puvvu 🌹 chaala baaguntundi nee navvu okasari navvava plzz🥺🤌</p>    
+    <button onclick="next('comfort')">Next 🤍</button>    
+  </div>    
+</div>  <!-- COMFORT -->  <div id="comfort" class="section hide">    
+  <div class="frame">    
+    <h2>Comfort Corner 🤍</h2>    
+    <p style="font-size:20px;line-height:1.7">    
+      Public vachestunnay kada baaga prepare avvu💫<br>    
+      Ala ani ekkuva stress padakandi doctor madam🙎 
+    </p>    
+    <button onclick="next('voice')">Final 💗</button>    
+  </div>    
+</div>  <!-- VOICE -->  <div id="voice" class="section hide">    
+  <div class="frame">    
+    <h2>Just listen 🎧</h2>    
+    <button onclick="playVoice()">Play Voice Note 💗</button>    
+    <p>Only for you, Jyoshna</p>   
+    <button onclick="next('question')">Next oka question 😔</button>  
+  </div>    
+</div>  <audio id="songAudio" src="song.mp3"></audio>  
+<audio id="voiceAudio" src="voice.mp3"></audio>    <!-- QUESTION SECTION -->  <div id="question" class="section hide">  
+  <div class="frame">  
+    <h1>Neeku ee gift nachinda 🥺🤌?</h1>  
+    <p>No ni click chesi chudu 😜</p>
+    <div class="container">  
+      <button id="yesBtn" onclick="next('final')">Yes!</button>  
+      <button id="noBtn">No</button>  
+    </div>  
+  </div>  
+</div>  <!-- FINAL LETTER -->  <div id="final" class="section hide">  
+  <div class="frame">  
+    <h2>Final Letter 💘</h2>  
+    <div class="type-text">  
+Naaku telusu neeku nachuthundi ani 😘  THANK YOU so much bangaram 💕
+Once again Happy Valentine’s Day my darling 💐🎊😊
+Love you so much 🫶💓
+</div>
+
+  </div>  
+</div>  <script>  
+/* HEART LOCK */  
+let taps = 0;  
+const heart = document.getElementById("heart");  
+const counter = document.getElementById("count");  
+  
+heart.onclick = () => {  
+  taps++;  
+  counter.innerText = `${taps} / 4 taps`;  
+  if (taps === 4) {  
+    heart.classList.add("heart-move");  
+    setTimeout(() => {  
+      document.getElementById("lock").style.display = "none";  
+      document.getElementById("start").style.display = "flex";  
+    }, 900);  
+  }  
+};  
+  
+/* NAVIGATION */  
+function next(id) {  
+  document.querySelectorAll(".section").forEach(sec => {  
+    sec.style.display = "none";  
+  });  
+  document.getElementById(id).style.display = "flex";  
+}  
+  
+/* AUDIO */  
+  document.addEventListener("visibilitychange", () => {  
+  if (document.hidden) {  
+    songAudio.pause();  
+    voiceAudio.pause();  
+  }  
+});  
+function playSong() {  
+  document.getElementById("songAudio").play();  
+}  
+  
+function playVoice() {  
+  const song = document.getElementById("songAudio");  
+  const voice = document.getElementById("voiceAudio");  
+  song.pause();  
+  song.currentTime = 0;  
+  voice.play();  
+}  
+  
+/* NO BUTTON RUN AWAY 😈 */  
+const noBtn = document.getElementById("noBtn");  
+const container = document.querySelector(".container");  
+  
+if (noBtn && container) {  
+  function moveButton() {  
+  const maxX = container.clientWidth - noBtn.offsetWidth;  
+  const maxY = container.clientHeight - noBtn.offsetHeight;    
+  
+  const x = Math.random() * maxX;  
+  const y = Math.random() * maxY;  
+  
+  noBtn.style.left = x + "px";  
+  noBtn.style.top = y + "px";  
+}  
+  
+  noBtn.addEventListener("mouseenter", moveButton); // desktop  
+  noBtn.addEventListener("touchstart", moveButton); // mobile  
+}  
+  
+/* SLIDESHOW */  
+let s = 0;  
+const slides = document.getElementsByClassName("slide");  
+  
+function showSlides() {  
+  for (let i = 0; i < slides.length; i++) {  
+    slides[i].style.display = "none";  
+  }  
+  slides[s].style.display = "block";  
+}  
+function manualSlide(n) {  
+  s = (s + n + slides.length) % slides.length;  
+  showSlides();  
+}  
+showSlides();  
+setInterval(() => {  
+  s = (s + 1) % slides.length;  
+  showSlides();  
+}, 4000);  
+  
+/* FLOATING HEARTS */  
+setInterval(() => {  
+  const h = document.createElement("div");  
+  h.className = "floating";  
+  h.innerHTML = "❤️";  
+  h.style.left = Math.random() * 100 + "vw";  
+  h.style.fontSize = Math.random() * 20 + 14 + "px";  
+  document.body.appendChild(h);  
+  setTimeout(() => h.remove(), 7000);  
+}, 600);  
+  
+/* ROSE PETALS */  
+setInterval(() => {  
+  const p = document.createElement("div");  
+  p.className = "petal";  
+  p.innerHTML = "🌸";  
+  p.style.left = Math.random() * 1 + "vw";  
+  p.style.fontSize = Math.random() * 2 + 1 + "px";  
+  document.body.appendChild(p);  
+  setTimeout(() => p.remove(), 7);  
+}, 8);  
+</script>  
