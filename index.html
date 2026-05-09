@@ -1,378 +1,295 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Happy Birthday Khalid 🌌</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>For My Brother ❤️</title>
 
 <style>
-
 *{
-margin:0;
-padding:0;
-box-sizing:border-box;
-scroll-behavior:smooth;
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
 }
 
 body{
-font-family:'Poppins',sans-serif;
-background:#050816;
-overflow:hidden;
-color:white;
+  font-family:'Segoe UI',sans-serif;
+  background:linear-gradient(180deg,#0f172a,#1e293b,#111827);
+  color:white;
+  overflow-x:hidden;
 }
 
-/* SCREENS */
-
-.screen{
-width:100%;
-height:100vh;
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
-text-align:center;
-padding:30px;
-position:absolute;
-top:0;
-left:100%;
-transition:1s ease;
-background:
-linear-gradient(to bottom, rgba(0,0,0,0.75), rgba(0,0,0,0.9)),
-url('https://images.unsplash.com/photo-1534447677768-be436bb09401?q=80&w=1600&auto=format&fit=crop');
-background-size:cover;
-background-position:center;
+section{
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  padding:40px 20px;
+  border-bottom:1px solid rgba(255,255,255,0.08);
 }
-
-.active{
-left:0;
-}
-
-/* TYPOGRAPHY */
 
 h1{
-font-size:52px;
-margin-bottom:20px;
-text-shadow:0 0 20px #00aeff;
+  font-size:48px;
+  margin-bottom:20px;
 }
 
 h2{
-font-size:36px;
-margin-bottom:20px;
-text-shadow:0 0 15px #00aeff;
+  font-size:38px;
+  margin-bottom:20px;
 }
 
 p{
-font-size:18px;
-max-width:700px;
-line-height:1.8;
-color:#d6e8ff;
+  font-size:20px;
+  line-height:1.8;
+  max-width:800px;
 }
 
-/* BUTTONS */
-
-button{
-margin-top:30px;
-padding:14px 35px;
-border:none;
-border-radius:40px;
-background:linear-gradient(45deg,#00aeff,#005eff);
-color:white;
-font-size:16px;
-cursor:pointer;
-transition:.3s;
-box-shadow:0 0 20px rgba(0,174,255,0.5);
+.card{
+  background:rgba(255,255,255,0.08);
+  padding:30px;
+  border-radius:25px;
+  backdrop-filter:blur(10px);
+  box-shadow:0 0 25px rgba(0,0,0,0.4);
+  width:90%;
+  max-width:850px;
 }
 
-button:hover{
-transform:scale(1.05);
+.btn{
+  margin-top:25px;
+  padding:14px 28px;
+  border:none;
+  border-radius:40px;
+  font-size:18px;
+  cursor:pointer;
+  background:#38bdf8;
+  color:white;
+  transition:0.3s;
 }
 
-/* STARS */
-
-.stars{
-position:fixed;
-width:100%;
-height:100%;
-top:0;
-left:0;
-overflow:hidden;
-z-index:-1;
+.btn:hover{
+  transform:scale(1.08);
+  background:#0ea5e9;
 }
 
-.star{
-position:absolute;
-width:2px;
-height:2px;
-background:white;
-border-radius:50%;
-animation:twinkle 5s infinite;
+img{
+  width:260px;
+  height:260px;
+  object-fit:cover;
+  border-radius:25px;
+  margin-top:20px;
+  border:4px solid rgba(255,255,255,0.2);
+  box-shadow:0 0 25px rgba(255,255,255,0.2);
 }
-
-@keyframes twinkle{
-0%,100%{opacity:.2;}
-50%{opacity:1;}
-}
-
-/* GALLERY */
 
 .gallery{
-display:flex;
-gap:20px;
-overflow-x:auto;
-padding-top:20px;
+  display:flex;
+  gap:20px;
+  flex-wrap:wrap;
+  justify-content:center;
+  margin-top:20px;
 }
 
 .gallery img{
-width:220px;
-height:320px;
-object-fit:cover;
-border-radius:20px;
-border:2px solid rgba(0,174,255,0.4);
-box-shadow:0 0 20px rgba(0,174,255,0.3);
+  width:180px;
+  height:180px;
 }
 
-/* CAKE */
-
-.cake{
-font-size:120px;
-animation:float 3s ease-in-out infinite;
+.quote{
+  font-size:28px;
+  font-style:italic;
+  color:#93c5fd;
 }
 
-@keyframes float{
-0%,100%{transform:translateY(0);}
-50%{transform:translateY(-15px);}
+footer{
+  padding:25px;
+  text-align:center;
+  background:#020617;
+  font-size:18px;
 }
-
-/* GIFT */
-
-.gift{
-font-size:110px;
-cursor:pointer;
-transition:.4s;
-}
-
-.gift:hover{
-transform:scale(1.1);
-}
-
-/* FINAL */
-
-.final{
-font-size:70px;
-font-weight:700;
-text-shadow:0 0 25px #00aeff;
-}
-
-/* MUSIC BUTTON */
 
 .music-btn{
-position:fixed;
-top:20px;
-right:20px;
-z-index:999;
+  background:#22c55e;
 }
 
+.music-btn:hover{
+  background:#16a34a;
+}
+
+@media(max-width:768px){
+  h1{
+    font-size:36px;
+  }
+
+  h2{
+    font-size:30px;
+  }
+
+  p{
+    font-size:18px;
+  }
+
+  img{
+    width:220px;
+    height:220px;
+  }
+}
 </style>
 </head>
-
 <body>
 
-<!-- MUSIC -->
-<audio id="music" loop>
-<source src="music.mp3" type="audio/mp3">
-</audio>
-
-<button class="music-btn" onclick="toggleMusic()">🎵 Music</button>
-
-<!-- STARS -->
-<div class="stars" id="stars"></div>
-
-<!-- SCREEN 1 -->
-<section class="screen active">
-<h2>For Someone Important...</h2>
-<p>Loading memories and emotions...</p>
-<button onclick="next()">Enter</button>
+<!-- SECTION 1 -->
+<section>
+  <div class="card">
+    <h1>To My Long Distance Brother 💙</h1>
+    <p>
+      Distance can separate places, but never hearts.
+      This little website is made specially for you.
+    </p>
+    <button class="btn" onclick="nextSection(1)">Start Journey 🚀</button>
+  </div>
 </section>
 
-<!-- SCREEN 2 -->
-<section class="screen">
-<h2>Distance Never Changed Brotherhood</h2>
-<p>
-Even if life placed miles between us...  
-the bond still remains strong.
-</p>
-<button onclick="next()">Continue</button>
+<!-- SECTION 2 -->
+<section>
+  <div class="card">
+    <h2>How We Met 🤝</h2>
+    <p>
+      Even though miles are between us,
+      our friendship became stronger every single day.
+      Some bonds are stronger than blood.
+    </p>
+    <img src="bro1.jpg" alt="Brother Photo">
+  </div>
 </section>
 
-<!-- SCREEN 3 -->
-<section class="screen">
-<h1>Happy Birthday Khalid 👑</h1>
-<p>Today is about you.</p>
-<button onclick="next()">Continue</button>
+<!-- SECTION 3 -->
+<section>
+  <div class="card">
+    <h2>Best Memories 📸</h2>
+
+    <div class="gallery">
+      <img src="mem1.jpg">
+      <img src="mem2.jpg">
+      <img src="mem3.jpg">
+    </div>
+  </div>
 </section>
 
-<!-- SCREEN 4 -->
-<section class="screen">
-<h2>Long Distance Brothers 🌌</h2>
-<p>
-We may not meet every day...  
-but some people remain close to the heart forever.
-</p>
-<button onclick="next()">Continue</button>
+<!-- SECTION 4 -->
+<section>
+  <div class="card">
+    <h2>Things I Appreciate 🌟</h2>
+    <p>
+      ✔ Always supporting me<br><br>
+      ✔ Listening when I needed someone<br><br>
+      ✔ Making me laugh even on bad days<br><br>
+      ✔ Being a real brother from far away
+    </p>
+  </div>
 </section>
 
-<!-- SCREEN 5 -->
-<section class="screen">
-<h2>Our Memories 📸</h2>
-
-<div class="gallery">
-
-<!-- CHANGE THESE IMAGES -->
-<img src="pic1.jpg">
-<img src="pic2.jpg">
-<img src="pic3.jpg">
-<img src="pic4.jpg">
-<img src="pic5.jpg">
-
-</div>
-
-<button onclick="next()">Continue</button>
+<!-- SECTION 5 -->
+<section>
+  <div class="card">
+    <h2>Our Crazy Conversations 😂</h2>
+    <p>
+      From random late-night talks
+      to sending memes nonstop,
+      every chat with you becomes a memory.
+    </p>
+  </div>
 </section>
 
-<!-- SCREEN 6 -->
-<section class="screen">
-<h2>Chess Brothers ♟️</h2>
-<p>
-Some of our best memories were made on a chessboard.  
-Wins, losses, laughs... every moment mattered.
-</p>
-<button onclick="next()">Continue</button>
+<!-- SECTION 6 -->
+<section>
+  <div class="card">
+    <h2>Brother Quote 💬</h2>
+    <p class="quote">
+      “A brother may be far away,
+      but the connection never fades.”
+    </p>
+  </div>
 </section>
 
-<!-- SCREEN 7 -->
-<section class="screen">
-<h2>A Message For You 💌</h2>
-<p>
-No matter where life takes us...  
-you'll always be my brother.  
-Distance can never replace memories and loyalty.
-</p>
-<button onclick="next()">Continue</button>
+<!-- SECTION 7 -->
+<section>
+  <div class="card">
+    <h2>Thank You ❤️</h2>
+    <p>
+      Thank you for being part of my life.
+      Thank you for understanding me.
+      Thank you for staying.
+    </p>
+  </div>
 </section>
 
-<!-- SCREEN 8 -->
-<section class="screen">
-<div class="cake">🎂</div>
+<!-- SECTION 8 -->
+<section>
+  <div class="card">
+    <h2>Voice or Song 🎵</h2>
+    <p>You can add your favorite song here.</p>
 
-<h2>Make A Wish</h2>
+    <audio id="song" src="song.mp3"></audio>
 
-<p>
-Tap the candle and make your birthday wish.
-</p>
-
-<button onclick="blowCandle()">Blow Candle 🕯️</button>
+    <button class="btn music-btn" onclick="playSong()">
+      Play Song ▶
+    </button>
+  </div>
 </section>
 
-<!-- SCREEN 9 -->
-<section class="screen" id="giftScreen">
-<div class="gift" onclick="openGift()">🎁</div>
-
-<h2>Open Your Gift</h2>
-
-<p id="giftText">
-A surprise is waiting for you.
-</p>
-
-<button onclick="next()">Continue</button>
+<!-- SECTION 9 -->
+<section>
+  <div class="card">
+    <h2>Future Plans ✈️</h2>
+    <p>
+      One day we’ll finally meet,
+      click photos together,
+      laugh nonstop,
+      and make even better memories.
+    </p>
+  </div>
 </section>
 
-<!-- SCREEN 10 -->
-<section class="screen">
-<div class="final">Happy Birthday Khalid 🌌</div>
+<!-- SECTION 10 -->
+<section>
+  <div class="card">
+    <h2>Final Message 💙</h2>
+    <p>
+      No matter how far you are,
+      you’ll always be my brother.
+      Distance means nothing when bond means everything.
+    </p>
 
-<p style="margin-top:30px;">
-Long distance never defeated brotherhood.
-</p>
+    <button class="btn" onclick="showMessage()">
+      Tap Here 🎁
+    </button>
 
-<button onclick="restart()">Replay Memories</button>
+    <p id="hiddenMessage" style="margin-top:20px; display:none; color:#7dd3fc;">
+      Love you bro 💙
+    </p>
+  </div>
 </section>
+
+<footer>
+  Made with 💙 for my brother
+</footer>
 
 <script>
-
-let current = 0;
-const screens = document.querySelectorAll(".screen");
-
-function next(){
-screens[current].classList.remove("active");
-current++;
-
-if(current >= screens.length){
-current = screens.length -1;
+function playSong(){
+  document.getElementById("song").play();
 }
 
-screens[current].classList.add("active");
+function showMessage(){
+  document.getElementById("hiddenMessage").style.display="block";
 }
 
-function restart(){
-screens[current].classList.remove("active");
-current = 0;
-screens[current].classList.add("active");
+function nextSection(num){
+  document.querySelectorAll("section")[num].scrollIntoView({
+    behavior:"smooth"
+  });
 }
-
-/* MUSIC */
-
-const music = document.getElementById("music");
-
-function toggleMusic(){
-if(music.paused){
-music.play();
-}else{
-music.pause();
-}
-}
-
-/* STARS */
-
-const stars = document.getElementById("stars");
-
-for(let i=0;i<150;i++){
-
-let star = document.createElement("div");
-star.classList.add("star");
-
-star.style.top = Math.random()*100+"%";
-star.style.left = Math.random()*100+"%";
-
-star.style.animationDuration =
-(Math.random()*5+3)+"s";
-
-stars.appendChild(star);
-}
-
-/* CANDLE */
-
-function blowCandle(){
-
-document.querySelector(".cake").innerHTML = "🕯️";
-
-setTimeout(()=>{
-alert("Some wishes deserve to come true ✨");
-next();
-},1000);
-
-}
-
-/* GIFT */
-
-function openGift(){
-
-document.getElementById("giftText").innerHTML =
-"Thank you for being an important part of my life, brother ♡";
-
-}
-
 </script>
 
 </body>
