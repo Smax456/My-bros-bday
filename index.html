@@ -1,238 +1,203 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>For My Brother ❤️</title>
+<title>For My Brother 💙</title>
 
 <style>
 
 *{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-}
-
-html{
-  scroll-behavior:smooth;
+margin:0;
+padding:0;
+box-sizing:border-box;
 }
 
 body{
-  font-family:'Segoe UI',sans-serif;
-  background:linear-gradient(180deg,#0f172a,#1e293b,#111827);
-  color:white;
-  overflow-x:hidden;
-  position:relative;
+font-family:'Segoe UI',sans-serif;
+background:linear-gradient(180deg,#0f172a,#111827,#020617);
+overflow:hidden;
+color:white;
 }
 
-/* FLOATING STARS */
+/* STARS */
 
 .stars{
-  position:fixed;
-  width:100%;
-  height:100%;
-  top:0;
-  left:0;
-  background-image:
-  radial-gradient(white 1px, transparent 1px);
-  background-size:40px 40px;
-  opacity:0.08;
-  z-index:-1;
+position:fixed;
+width:100%;
+height:100%;
+top:0;
+left:0;
+background-image:
+radial-gradient(white 1px, transparent 1px);
+background-size:40px 40px;
+opacity:0.08;
+z-index:-1;
 }
 
-/* PROGRESS BAR */
+/* SECTIONS */
 
-#progressBar{
-  position:fixed;
-  top:0;
-  left:0;
-  width:0%;
-  height:5px;
-  background:#38bdf8;
-  z-index:999;
-  box-shadow:0 0 15px #38bdf8;
+.section{
+width:100%;
+height:100vh;
+display:none;
+justify-content:center;
+align-items:center;
+padding:20px;
+animation:fade 1s ease;
 }
 
-/* SECTION */
-
-section{
-  min-height:100vh;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  align-items:center;
-  text-align:center;
-  padding:40px 20px;
-  border-bottom:1px solid rgba(255,255,255,0.08);
-
-  animation:fadeUp 1s ease;
-}
-
-/* ANIMATION */
-
-@keyframes fadeUp{
-
-  from{
-    opacity:0;
-    transform:translateY(40px);
-  }
-
-  to{
-    opacity:1;
-    transform:translateY(0);
-  }
-}
-
-/* HEADINGS */
-
-h1{
-  font-size:50px;
-  margin-bottom:20px;
-}
-
-h2{
-  font-size:40px;
-  margin-bottom:20px;
-}
-
-h3{
-  margin-top:25px;
-  font-size:28px;
-  color:#7dd3fc;
-}
-
-p{
-  font-size:20px;
-  line-height:1.8;
-  max-width:800px;
+.active{
+display:flex;
 }
 
 /* CARD */
 
 .card{
-  background:rgba(255,255,255,0.08);
+width:90%;
+max-width:850px;
+padding:35px;
+border-radius:28px;
 
-  padding:30px;
+background:rgba(255,255,255,0.08);
 
-  border-radius:25px;
+backdrop-filter:blur(12px);
 
-  backdrop-filter:blur(12px);
+border:1px solid rgba(255,255,255,0.12);
 
-  border:1px solid rgba(255,255,255,0.12);
+box-shadow:
+0 0 30px rgba(56,189,248,0.15),
+0 0 60px rgba(0,0,0,0.35);
 
-  box-shadow:
-  0 0 30px rgba(56,189,248,0.15),
-  0 0 60px rgba(0,0,0,0.35);
+text-align:center;
+}
 
-  width:90%;
-  max-width:850px;
+/* ANIMATION */
+
+@keyframes fade{
+
+from{
+opacity:0;
+transform:translateY(30px);
+}
+
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+/* TEXT */
+
+h1{
+font-size:48px;
+margin-bottom:20px;
+}
+
+h2{
+font-size:38px;
+margin-bottom:20px;
+}
+
+p{
+font-size:20px;
+line-height:1.8;
 }
 
 /* BUTTON */
 
 .btn{
-  margin-top:25px;
-  padding:14px 28px;
-  border:none;
-  border-radius:40px;
-  font-size:18px;
-  cursor:pointer;
-  background:#38bdf8;
-  color:white;
-  transition:0.3s;
+margin-top:25px;
+padding:14px 28px;
+border:none;
+border-radius:40px;
+font-size:18px;
+cursor:pointer;
+background:#38bdf8;
+color:white;
+transition:0.3s;
 }
 
 .btn:hover{
-  transform:scale(1.08);
-  background:#0ea5e9;
+transform:scale(1.08);
+background:#0ea5e9;
 }
 
-/* MUSIC BUTTON */
-
-.music-btn{
-  background:#22c55e;
-}
-
-.music-btn:hover{
-  background:#16a34a;
-}
-
-/* IMAGES */
+/* IMAGE */
 
 img{
-  width:260px;
-  height:260px;
-  object-fit:cover;
-  border-radius:25px;
-  margin-top:20px;
-  border:4px solid rgba(255,255,255,0.2);
-  box-shadow:0 0 25px rgba(255,255,255,0.2);
-
-  transition:0.4s;
+width:240px;
+height:240px;
+object-fit:cover;
+border-radius:22px;
+margin-top:20px;
+border:4px solid rgba(255,255,255,0.15);
+transition:0.4s;
 }
 
 img:hover{
-  transform:scale(1.06);
+transform:scale(1.05);
 }
 
-/* GALLERY */
-
 .gallery{
-  display:flex;
-  gap:20px;
-  flex-wrap:wrap;
-  justify-content:center;
-  margin-top:20px;
+display:flex;
+justify-content:center;
+gap:20px;
+flex-wrap:wrap;
+margin-top:20px;
 }
 
 .gallery img{
-  width:180px;
-  height:180px;
+width:160px;
+height:160px;
 }
 
 /* QUOTE */
 
 .quote{
-  font-size:28px;
-  font-style:italic;
-  color:#93c5fd;
+font-size:28px;
+font-style:italic;
+color:#93c5fd;
 }
 
-/* FOOTER */
+/* LETTER */
 
-footer{
-  padding:25px;
-  text-align:center;
-  background:#020617;
-  font-size:18px;
+.letter{
+text-align:left;
+margin-top:20px;
+font-size:20px;
+line-height:2;
+background:rgba(255,255,255,0.05);
+padding:25px;
+border-radius:20px;
 }
 
 /* MOBILE */
 
 @media(max-width:768px){
 
-  h1{
-    font-size:38px;
-  }
+h1{
+font-size:36px;
+}
 
-  h2{
-    font-size:32px;
-  }
+h2{
+font-size:30px;
+}
 
-  p{
-    font-size:18px;
-  }
+p{
+font-size:18px;
+}
 
-  img{
-    width:220px;
-    height:220px;
-  }
+img{
+width:210px;
+height:210px;
+}
 
-  .gallery img{
-    width:150px;
-    height:150px;
-  }
+.gallery img{
+width:140px;
+height:140px;
+}
 }
 
 </style>
@@ -240,327 +205,303 @@ footer{
 
 <body>
 
-<!-- STARS -->
 <div class="stars"></div>
-
-<!-- PROGRESS BAR -->
-<div id="progressBar"></div>
 
 <!-- SECTION 1 -->
 
-<section>
+<div class="section active">
 
-  <div class="card">
+<div class="card">
 
-    <h1>To My Long Distance Brother 💙</h1>
+<h1>To My Long Distance Brother 💙</h1>
 
-    <p id="typing"></p>
+<p id="typing"></p>
 
-    <button class="btn" onclick="nextSection(1)">
-      Start Journey 🚀
-    </button>
+<button class="btn" onclick="nextSection()">
+Start Journey 🚀
+</button>
 
-  </div>
-
-</section>
+</div>
+</div>
 
 <!-- SECTION 2 -->
 
-<section>
+<div class="section">
 
-  <div class="card">
+<div class="card">
 
-    <h2>How We Met 🤝</h2>
+<h2>How We Met 🤝</h2>
 
-    <p>
-      Even though miles are between us,
-      our friendship became stronger every single day.
-      Some bonds are stronger than blood.
-    </p>
+<p>
+Even though miles are between us,
+our friendship became stronger every single day.
+</p>
 
-    <img src="bro1.jpg" alt="Brother Photo">
+<img src="bro1.jpg">
 
-  </div>
+<button class="btn" onclick="nextSection()">
+Next ➜
+</button>
 
-</section>
+</div>
+</div>
 
 <!-- SECTION 3 -->
 
-<section>
+<div class="section">
 
-  <div class="card">
+<div class="card">
 
-    <h2>Best Memories 📸</h2>
+<h2>Best Memories 📸</h2>
 
-    <div class="gallery">
+<div class="gallery">
 
-      <img src="mem1.jpg">
+<img src="mem1.jpg">
 
-      <img src="mem2.jpg">
+<img src="mem2.jpg">
 
-      <img src="mem3.jpg">
+<img src="mem3.jpg">
 
-    </div>
+</div>
 
-  </div>
+<button class="btn" onclick="nextSection()">
+Continue 💫
+</button>
 
-</section>
+</div>
+</div>
 
 <!-- SECTION 4 -->
 
-<section>
+<div class="section">
 
-  <div class="card">
+<div class="card">
 
-    <h2>Things I Appreciate 🌟</h2>
+<h2>Things I Appreciate 🌟</h2>
 
-    <p>
+<p>
 
-      ✔ Always supporting me
-      <br><br>
+✔ Always supporting me
+<br><br>
 
-      ✔ Listening when I needed someone
-      <br><br>
+✔ Listening when I needed someone
+<br><br>
 
-      ✔ Making me laugh even on bad days
-      <br><br>
+✔ Making me laugh on bad days
+<br><br>
 
-      ✔ Being a real brother from far away
+✔ Being a real brother
 
-    </p>
+</p>
 
-  </div>
+<button class="btn" onclick="nextSection()">
+Next 💙
+</button>
 
-</section>
+</div>
+</div>
 
 <!-- SECTION 5 -->
 
-<section>
+<div class="section">
 
-  <div class="card">
+<div class="card">
 
-    <h2>Our Crazy Conversations 😂</h2>
+<h2>Our Crazy Conversations 😂</h2>
 
-    <p>
-      From random late-night talks
-      to sending memes nonstop,
-      every chat with you becomes a memory.
-    </p>
+<p>
+From random late-night talks
+to nonstop memes,
+every chat becomes a memory.
+</p>
 
-  </div>
+<button class="btn" onclick="nextSection()">
+Continue 🚀
+</button>
 
-</section>
+</div>
+</div>
 
 <!-- SECTION 6 -->
 
-<section>
+<div class="section">
 
-  <div class="card">
+<div class="card">
 
-    <h2>Brother Quote 💬</h2>
+<h2>Brother Quote 💬</h2>
 
-    <p class="quote">
+<p class="quote">
 
-      “A brother may be far away,
-      but the connection never fades.”
+“A brother may be far away,
+but the connection never fades.”
 
-    </p>
+</p>
 
-  </div>
+<button class="btn" onclick="nextSection()">
+Next ✨
+</button>
 
-</section>
+</div>
+</div>
 
 <!-- SECTION 7 -->
 
-<section>
+<div class="section">
 
-  <div class="card">
+<div class="card">
 
-    <h2>Thank You ❤️</h2>
+<h2>Thank You ❤️</h2>
 
-    <p>
-      Thank you for being part of my life.
-      Thank you for understanding me.
-      Thank you for staying.
-    </p>
+<p>
+Thank you for staying.
+Thank you for understanding me.
+Thank you for being part of my life.
+</p>
 
-  </div>
+<button class="btn" onclick="nextSection()">
+Next 🎵
+</button>
 
-</section>
+</div>
+</div>
 
 <!-- SECTION 8 -->
 
-<section>
+<div class="section">
 
-  <div class="card">
+<div class="card">
 
-    <h2>Voice or Song 🎵</h2>
+<h2>Favorite Song 🎵</h2>
 
-    <p>You can add your favorite song here.</p>
+<p>Play our song here.</p>
 
-    <audio id="song" src="song.mp3" loop></audio>
+<audio id="song" src="song.mp3"></audio>
 
-    <button class="btn music-btn" onclick="playSong()">
-      Play Song ▶
-    </button>
+<button class="btn" onclick="playSong()">
+Play Song ▶
+</button>
 
-  </div>
+<br>
 
-</section>
+<button class="btn" onclick="nextSection()">
+Continue 💫
+</button>
+
+</div>
+</div>
 
 <!-- SECTION 9 -->
 
-<section>
+<div class="section">
 
-  <div class="card">
+<div class="card">
 
-    <h2>Future Plans ✈️</h2>
+<h2>Future Plans ✈️</h2>
 
-    <p>
-      One day we’ll finally meet,
-      click photos together,
-      laugh nonstop,
-      and make even better memories.
-    </p>
+<p>
+One day we’ll finally meet,
+click photos together,
+laugh nonstop,
+and create unforgettable memories.
+</p>
 
-    <h3 id="countdown"></h3>
+<button class="btn" onclick="nextSection()">
+One Last Thing 💌
+</button>
 
-  </div>
-
-</section>
+</div>
+</div>
 
 <!-- SECTION 10 -->
 
-<section>
+<div class="section">
 
-  <div class="card">
+<div class="card">
 
-    <h2>Final Message 💙</h2>
+<h2>A Special Letter For You 💙</h2>
 
-    <p>
-      No matter how far you are,
-      you’ll always be my brother.
-      Distance means nothing when bond means everything.
-    </p>
+<div class="letter">
 
-    <button class="btn" onclick="showMessage()">
-      Tap Here 🎁
-    </button>
+Bro,<br><br>
 
-    <p
-      id="hiddenMessage"
-      style="
-      margin-top:20px;
-      display:none;
-      color:#7dd3fc;
-      font-size:24px;
-      "
-    >
-      Love you bro 💙
-    </p>
+No matter how far you are,
+you’ve become one of the most important people in my life.
 
-  </div>
+Even from a distance,
+you supported me,
+understood me,
+and stayed beside me in your own way.
 
-</section>
+Some people come and go,
+but real bonds stay forever.
 
-<!-- FOOTER -->
+I genuinely appreciate every memory,
+every conversation,
+and every moment we shared.
 
-<footer>
-  Made with 💙 for my brother
-</footer>
+One day,
+we’ll finally meet
+and laugh about all these moments together.
+
+Until then,
+remember this —
+
+you’ll always have a brother here. 💙
+
+<br><br>
+
+— From Me
+
+</div>
+
+</div>
+</div>
 
 <script>
 
 /* TYPING EFFECT */
 
 const text =
-"Distance can separate places, but never hearts. This little website is made specially for you.";
+"Distance can separate places, but never hearts. This website is made specially for you 💙";
 
 let i = 0;
 
-function typingEffect(){
+function typing(){
 
-  if(i < text.length){
+if(i < text.length){
 
-    document.getElementById("typing").innerHTML += text.charAt(i);
+document.getElementById("typing").innerHTML += text.charAt(i);
 
-    i++;
+i++;
 
-    setTimeout(typingEffect,40);
-  }
+setTimeout(typing,40);
+}
 }
 
-typingEffect();
+typing();
+
+/* NEXT SECTION */
+
+let current = 0;
+
+const sections =
+document.querySelectorAll(".section");
+
+function nextSection(){
+
+sections[current].classList.remove("active");
+
+current++;
+
+sections[current].classList.add("active");
+}
 
 /* PLAY SONG */
 
 function playSong(){
 
-  document.getElementById("song").play();
+document.getElementById("song").play();
 }
-
-/* HIDDEN MESSAGE */
-
-function showMessage(){
-
-  let msg =
-  document.getElementById("hiddenMessage");
-
-  msg.style.display = "block";
-
-  msg.style.animation = "fadeUp 1s ease";
-}
-
-/* NEXT SECTION */
-
-function nextSection(num){
-
-  document.querySelectorAll("section")[num]
-  .scrollIntoView({
-    behavior:"smooth"
-  });
-}
-
-/* PROGRESS BAR */
-
-window.onscroll = function(){
-
-  let winScroll =
-  document.body.scrollTop ||
-  document.documentElement.scrollTop;
-
-  let height =
-  document.documentElement.scrollHeight -
-  document.documentElement.clientHeight;
-
-  let scrolled =
-  (winScroll / height) * 100;
-
-  document.getElementById("progressBar")
-  .style.width = scrolled + "%";
-};
-
-/* COUNTDOWN */
-
-let future =
-new Date("Dec 31, 2026 00:00:00").getTime();
-
-setInterval(function(){
-
-  let now =
-  new Date().getTime();
-
-  let distance =
-  future - now;
-
-  let days =
-  Math.floor(distance / (1000 * 60 * 60 * 24));
-
-  document.getElementById("countdown")
-  .innerHTML =
-  days + " days until we meet 🤝";
-
-},1000);
 
 </script>
 
